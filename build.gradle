@@ -25,6 +25,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	optional "org.springframework.boot:spring-boot-configuration-processor" // @ConfigurationProperties 注解
 }
+compileJava.dependsOn(processResources) // 使用 dependsOn 才可以上 optional 生效
